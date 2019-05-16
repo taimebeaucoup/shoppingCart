@@ -1,0 +1,37 @@
+* {
+    margin:0;
+  }
+html, body {
+  font-family: sans-serif;
+}
+
+h1 {
+    color: white; 
+    background: #C77B8C;
+    font-size: 5rem; 
+    display: flex;  
+    align-content: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    }
+
+.containerFlex{
+        display: flex;
+        padding: 2rem;
+        align-items: flex-start;
+    }
+
+    .alignBox{
+        flex: 0 1 50%;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        background-color: aqua;
+    }
+
+.organicLayout{
+margin: 2rem;
+align-self: flex-end;
+}
