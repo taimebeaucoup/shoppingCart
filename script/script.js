@@ -83,16 +83,17 @@ $(document).ready(function () {
         if (intAmount > 1) {
             intAmount = intAmount - 1;
             $(amountId).text(intAmount);
+            var newb = []
             var firstRemoved = false;
             for(var i = checkoutItems.length - 1; i >= 0; i--) {
-                if(checkoutItems[i] === productId && !firstRemoved) {
-                   checkoutItems = checkoutItems.splice(i, 1);
+                 if(checkoutItems[i].id !== productId || firstRemoved) {
+                    newb = newb.concat([checkoutItems[i]]);
                 }
                 else{
                     firstRemoved = true;
                 }
             }
-        console.log(checkoutItems)
+            checkoutItems = newb;
         }
         else{
             const itemToRemove = "#listItem" + productId
