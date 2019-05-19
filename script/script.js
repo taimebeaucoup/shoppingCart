@@ -40,21 +40,48 @@ $(document).ready(function () {
         console.log('add to cart');
         
     });
+    $(document).on('click', '#btn-list .plusButton1', function(event){ 
+        console.log('add toseds cart' + event + event.target);
+         const amountId = "#"+ "1" + "amount" ;
+         var amount = $(amountId).text();
+         intAmount=parseInt(amount);
+         intAmount = intAmount + 1;
+         $(amountId).text(intAmount);
+         checkoutItems = checkoutItems.concat([{id: "1", price: "10.40"}]);   
+
+   });
+   $(document).on('click', '#btn-list .plusButton2', function(event){ 
+    console.log('add toseds cart' + event + event.target);
+     const amountId = "#"+ "2" + "amount" ;
+     var amount = $(amountId).text();
+     intAmount=parseInt(amount);
+     intAmount = intAmount + 1;
+     $(amountId).text(intAmount);
+     checkoutItems = checkoutItems.concat([{id: "2", price: "10.40"}]);   
+
+});
+
 
   // Function to create content HTML string
   function createListItem(text, imageSource, price, productId, amount) {
       const amountId = productId + "amount"
+      const plusButtonClass = "plusButton" + productId;
     return `
-    <li>
+    <li id= "btn-list">
     <img src= ${imageSource}> </img>
     <p> ${text} </p>
     <button> - </button>
     <p id = ${amountId}> ${amount} </p>
-    <button> + </button>
+    <button class= ${plusButtonClass} > + </button>
     <p> ${price} chf </p>
     </li>
     `
   }
+  $('#plusButton').click(function (event) {
+    console.log(event);
+    console.log(event.target);
+    
+});
 
 
 
