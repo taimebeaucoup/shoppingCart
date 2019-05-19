@@ -50,8 +50,20 @@ $(document).ready(function () {
         addToCheckout("2")
 
     });
+    $(document).on('click', '#listItem3 .plusButton3', function (event) {
+        addToCheckout("3")
+
+    });
     $(document).on('click', '#listItem1 .minusButton1', function (event) {
         var productId = "1" 
+        removeFromCheckout(productId)
+    });
+    $(document).on('click', '#listItem2 .minusButton2', function (event) {
+        var productId = "2" 
+        removeFromCheckout(productId)
+    });
+    $(document).on('click', '#listItem3 .minusButton3', function (event) {
+        var productId = "3" 
         removeFromCheckout(productId)
     });
 
