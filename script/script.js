@@ -1,11 +1,6 @@
 $(document).ready(function () {
     let checkoutItems = [];
 
-    $('#fadeButton').click(function (event) {
-        console.log('Fade out that div! 👻');
-        console.log('event.target: ', event.target);
-    });
-
     $('#addProduct1ToCart').click(function (event) {
         var productId = "1";
         console.log('add to cart');
@@ -38,6 +33,33 @@ $(document).ready(function () {
 
     $('#addProduct2ToCart').click(function (event) {
         console.log('add to cart');
+        var productId = "2";
+        console.log('add to cart');
+        var container = $('.js-add-content');
+        var textForContent = 'This can contain more than just one element';
+        var idFound = false;
+        var amount = 1;
+        var newHTMLContent = createListItem(textForContent, "https://i2.cdscdn.com/pdt2/6/2/3/1/700x700/nik4020684229623/rw/nikon-speedlight-sb-500-flash-amovible-a-griffe-24.jpg", "15.40", productId, amount);
+
+
+        checkoutItems.forEach(checkoutItem => {
+            if (checkoutItem.id === productId) {
+                idFound = true;
+                amount = amount + 1;
+            }
+        });
+        if (idFound) {
+            checkoutItems = checkoutItems.concat([{ id: productId, price: "15.40" }]);
+            const amountId = "#" + productId + "amount"
+            $(amountId).text(amount);
+        }
+
+        else {
+            container.append(newHTMLContent);
+            checkoutItems = checkoutItems.concat([{ id: productId, price: "15.40" }]);
+        }
+        calculatePriceSum()
+        console.log(checkoutItems);
 
     });
 
@@ -55,29 +77,27 @@ $(document).ready(function () {
 
     });
     $(document).on('click', '#listItem1 .minusButton1', function (event) {
-        var productId = "1" 
+        var productId = "1"
         removeFromCheckout(productId)
     });
     $(document).on('click', '#listItem2 .minusButton2', function (event) {
-        var productId = "2" 
+        var productId = "2"
         removeFromCheckout(productId)
     });
     $(document).on('click', '#listItem3 .minusButton3', function (event) {
-        var productId = "3" 
+        var productId = "3"
         removeFromCheckout(productId)
     });
 
-    function calculatePriceSum()
-    {
+    function calculatePriceSum() {
         var sum = 0;
         checkoutItems.forEach(checkoutItem => {
-            sum = sum + parseFloat( checkoutItem.price)
+            sum = sum + parseFloat(checkoutItem.price)
         })
         $(priceSum).text(sum);
     }
 
-    function addToCheckout(productId )
-    {
+    function addToCheckout(productId) {
         const amountId = "#" + productId + "amount";
         var amount = $(amountId).text();
         intAmount = parseInt(amount);
@@ -87,8 +107,7 @@ $(document).ready(function () {
         calculatePriceSum()
     }
 
-    function removeFromCheckout(productId)
-    {
+    function removeFromCheckout(productId) {
         const amountId = "#" + productId + "amount";
         var amount = $(amountId).text();
         intAmount = parseInt(amount);
@@ -97,25 +116,30 @@ $(document).ready(function () {
             $(amountId).text(intAmount);
             var newb = []
             var firstRemoved = false;
-            for(var i = checkoutItems.length - 1; i >= 0; i--) {
-                 if(checkoutItems[i].id !== productId || firstRemoved) {
+            for (var i = checkoutItems.length - 1; i >= 0; i--) {
+                if (checkoutItems[i].id !== productId || firstRemoved) {
                     newb = newb.concat([checkoutItems[i]]);
                 }
-                else{
+                else {
                     firstRemoved = true;
                 }
             }
             checkoutItems = newb;
         }
-        else{
+        else {
             const itemToRemove = "#listItem" + productId
-            let newCheckoutItems = [];
-        checkoutItems.forEach(checkoutItem => {
-            if (checkoutItem.id !== productId || firstRemoved) {
-                newCheckoutItems.concat([checkoutItem])
+            var newb = []
+            var firstRemoved = false;
+            for (var i = checkoutItems.length - 1; i >= 0; i--) {
+                if (checkoutItems[i].id !== productId || firstRemoved) {
+                    newb = newb.concat([checkoutItems[i]]);
+                }
+                else {
+                    firstRemoved = true;
+                }
             }
-        });
-        $(itemToRemove).remove()
+            checkoutItems = newb;
+            $(itemToRemove).remove()
         }
         calculatePriceSum()
     }
@@ -143,6 +167,10 @@ $(document).ready(function () {
 
     });
 
+$('#clickCart').click(function(event){
+    console.log(event);
+    console.log(event.target);
+});    
 
 
 });

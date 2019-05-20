@@ -8,35 +8,46 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="./script/script.js"></script>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <link href="./css/style.css" rel="stylesheet">
 
 </head>
 
 <body>
-    <h1 style="font-size:8vw;">leihs</h1>
+    <ul>
+        <li><a class="active" href="#home">leihs home</a></li>
+        <li style="float:right"><a id = "clickCart" href="#shoppingCart">shopping cart</a></li>
+    </ul>
+
+<div class="shoppingCart">
+        <p>shopping Cart display</p>
+</div>
     <div class="containerFlex">
         <div class="alignBox">
-            <img id="fadeButton" src="https://www.nikon.de/imported/images/web/EU/products/digital-cameras/dslr/hero_ppdd_updated/nikon_dslr_d810_black_front--original.png" alt="canon camera">
-        <p>description of product</p>
-        <button type="button" id ="addProduct1ToCart" > button 1</button>
+            <img id="fadeButton"
+                src="https://www.nikon.de/imported/images/web/EU/products/digital-cameras/dslr/hero_ppdd_updated/nikon_dslr_d810_black_front--original.png" width="460" height="345"
+                alt="canon camera">
+            <p>description of product</p>
+            <button type="button" id="addProduct1ToCart"> button 1</button>
         </div>
 
         <div class="alignBox organicLayout">
             <div>
-                    <img src="https://www.nikon.de/imported/images/web/EU/products/digital-cameras/dslr/d810/nikon_dslr_d810_afs_105_1_4_e_nikkor_lens--original.png" alt="canon camera">
-            
-                    <button type="button" id ="addProduct2ToCart" > button 2</button>
-                </div>
+                <img  src="https://i2.cdscdn.com/pdt2/6/2/3/1/700x700/nik4020684229623/rw/nikon-speedlight-sb-500-flash-amovible-a-griffe-24.jpg" width="460" height="345"
+                    alt="flash">
+
+                <button type="button" id="addProduct2ToCart"> button 2</button>
+            </div>
 
 
         </div>
 
-        <ul class="js-add-content" id= 'cartProductList'>
-           
+        <ul class="js-add-content" id='cartProductList'>
+
         </ul>
-        <p id = "priceSum">0</p>
+        <p id="priceSum">0</p>
 
     </div>
 

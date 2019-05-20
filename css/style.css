@@ -4,7 +4,50 @@
 html, body {
   font-family: sans-serif;
 }
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+li {
+  float: left;
+}
 
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+li a:hover:not(.active) {
+  background-color: #111;
+}
+.active {
+  background-color: gray;
+}
+
+
+.shoppingCart{
+  position:absolute;  
+z-index: 2; 
+display: flex;
+flex-direction: row-reverse;
+width: 50%;
+height: auto;
+background-color: rgb(255, 0, 0);
+/*visibility: hidden; */
+
+}
 h1 {
     color: white; 
     background: #C77B8C;
@@ -17,6 +60,11 @@ h1 {
     font-weight: 300;
     }
 
+    img {
+      width: 100%;
+      height: auto;
+    }
+
 .containerFlex{
         display: flex;
         padding: 2rem;
@@ -24,7 +72,7 @@ h1 {
     }
 
     .alignBox{
-        flex: 0 1 50%;
+        flex: 0 1 30%;
         justify-content: center;
         align-items: center;
         align-content: center;
