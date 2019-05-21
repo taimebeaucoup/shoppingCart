@@ -176,7 +176,7 @@ $('#clickCart').click(function(event){
 (function(){
  
   $("#clickCart").on("click", function() {
-    $(".shoppingCart").fadeToggle( "fast");
+    $(".cart").fadeToggle( "fast");
   });
   
 })();
