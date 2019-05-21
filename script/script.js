@@ -170,7 +170,15 @@ $(document).ready(function () {
 $('#clickCart').click(function(event){
     console.log(event);
     console.log(event.target);
+    
 });    
 
+(function(){
+ 
+  $("#clickCart").on("click", function() {
+    $(".shoppingCart").fadeToggle( "fast");
+  });
+  
+})();
 
 });
