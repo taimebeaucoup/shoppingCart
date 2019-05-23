@@ -36,7 +36,7 @@ $(document).ready(function () {
         var productId = "2";
         console.log('add to cart');
         var container = $('.js-add-content');
-        var textForContent = 'Nice Camera Nikon ;) thumbs uo';
+        var textForContent = 'Nice Camera';
         var idFound = false;
         var amount = 1;
         var newHTMLContent = createListItem(textForContent, "https://i2.cdscdn.com/pdt2/6/2/3/1/700x700/nik4020684229623/rw/nikon-speedlight-sb-500-flash-amovible-a-griffe-24.jpg", "15.40", productId, amount);
@@ -152,12 +152,26 @@ $(document).ready(function () {
         const listItemId = "listItem" + productId;
         return `
     <li id= ${listItemId}> 
-    <img src= ${imageSource}> </img>
-    <p class= "descriptionStyle"> ${text} </p>
-    <button class= "plusMinusStyle ${minusButtonClass}" > - </button>
-    <p id = ${amountId}> ${amount} </p>
-    <button  class= "plusMinusStyle ${plusButtonClass}"> + </button>
-    <p> ${price} chf </p>
+<div class="shoppingLayout">
+    <div>
+        <img class="imgSizeList" src= ${imageSource}> </img>
+        <p class= "descriptionStyle"> ${text} </p>
+    </div>
+
+    <div class="textSignsAmountWrap">
+        <div class="signsPriceAlign">
+            <div class="minusPlusAmount">
+                <button class= "plusMinusStyle ${minusButtonClass}" > - </button>
+                <p class="amountStyle" id = ${amountId}> ${amount} </p>
+                <button  class= "plusMinusStyle ${plusButtonClass}"> + </button>
+            </div>
+
+            <div class="minusPlusAmount" >
+                <p class="priceAlign"> ${price} chf </p>
+            </div>
+        </div>
+    </div>
+</div>    
     </li>
     `
     }
@@ -167,18 +181,18 @@ $(document).ready(function () {
 
     });
 
-$('#clickCart').click(function(event){
-    console.log(event);
-    console.log(event.target);
-    
-});    
+    $('#clickCart').click(function (event) {
+        console.log(event);
+        console.log(event.target);
 
-(function(){
- 
-  $("#clickCart").on("click", function() {
-    $(".cart").fadeToggle( "fast");
-  });
-  
-})();
+    });
+
+    (function () {
+
+        $("#clickCart").on("click", function () {
+            $(".cart").fadeToggle("fast");
+        });
+
+    })();
 
 });
