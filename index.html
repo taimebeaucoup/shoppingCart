@@ -10,16 +10,26 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <link href="https://fonts.googleapis.com/css?family=Chivo:300,700|Playfair+Display:700i" rel="stylesheet">
     <link href="./css/style.css" rel="stylesheet">
 
 </head>
 
 <body>
-    <ul>
-        <li><a class="active" href="#home">leihs home</a></li>
-        <li style="float:right"><a id = "clickCart" href="#shoppingCart">shopping cart</a></li>
-    </ul>
+
+    <div class="navWrap">
+
+        <div class="navAlign">
+            <li class="liStyle"><a href="#home">leihs home</a></li>
+        </div>
+
+        <div class="navAlign">
+            <li class="liStyle" style="float:right"><a id="clickCart" href="#shoppingCart">shopping cart</a></li>
+        </div>
+    </div>
+
+
+
     <h1>Fotografie</h1>
 
 
@@ -27,31 +37,42 @@
 
         <div class="alignBox">
             <img id="fadeButton"
-                src="https://www.nikon.de/imported/images/web/EU/products/digital-cameras/dslr/hero_ppdd_updated/nikon_dslr_d810_black_front--original.png" width="460" height="345"
-                alt="canon camera">
-            <p>description of product</p>
-            <button type="button" id="addProduct1ToCart"> button 1</button>
+                src="https://www.nikon.de/imported/images/web/EU/products/digital-cameras/dslr/hero_ppdd_updated/nikon_dslr_d810_black_front--original.png"
+                width="460" height="345" alt="canon camera">
+            <div>
+                <h2>Noice Nikon Camera</h2>
+                <p class="textStyle"> super mega cool and useful description of stuff</p>
+            </div>
+            <button class="buttonStyle" type="button" id="addProduct1ToCart"> button 1</button>
         </div>
 
         <div class="alignBox">
             <div>
-                <img  src="https://i2.cdscdn.com/pdt2/6/2/3/1/700x700/nik4020684229623/rw/nikon-speedlight-sb-500-flash-amovible-a-griffe-24.jpg" width="460" height="345"
-                    alt="flash">
+                <img src="https://i2.cdscdn.com/pdt2/6/2/3/1/700x700/nik4020684229623/rw/nikon-speedlight-sb-500-flash-amovible-a-griffe-24.jpg"
+                    width="460" height="345" alt="flash">
+                <div>
+                    <h2>Noice Nikon Camera 2 </h2>
+                    <p class="textStyle"> super mega cool and useful description of stuff</p>
+                </div>
 
-                <button type="button" id="addProduct2ToCart"> button 2</button>
+                <button class="buttonStyle" type="button" id="addProduct2ToCart"> button 2</button>
             </div>
 
 
         </div>
+<div class= "cartWrapper">
 
-    <div class="cart">
-        <h3>shopping cart</h3>
-        <div class="shoppingCart">
-        <ul class="js-add-content shopping-cart-items" id='cartProductList'>
+        <div class="cart">
+            <h3>shopping cart</h3>
         </div>
-        <p id="priceSum">0</p>
-        </ul>
-    </div>
+
+        <div class="cart">
+            <div class="shoppingCart">
+                <ul class="js-add-content shopping-cart-items" id='cartProductList'>
+            </div>
+            <p id="priceSum">Total Price: 0 </p>
+            </ul>
+        </div>
 
 
     </div>
@@ -59,10 +80,5 @@
 
 
 </body>
-
-
-
-
-
 
 </html>

@@ -5,7 +5,7 @@ $(document).ready(function () {
         var productId = "1";
         console.log('add to cart');
         var container = $('.js-add-content');
-        var textForContent = 'This can contain more than just one element';
+        var textForContent = 'Nikon cam :) ';
         var idFound = false;
         var amount = 1;
         var newHTMLContent = createListItem(textForContent, "https://www.nikon.de/imported/images/web/EU/products/digital-cameras/dslr/hero_ppdd_updated/nikon_dslr_d810_black_front--original.png", "10.40", productId, amount);
@@ -36,7 +36,7 @@ $(document).ready(function () {
         var productId = "2";
         console.log('add to cart');
         var container = $('.js-add-content');
-        var textForContent = 'This can contain more than just one element';
+        var textForContent = 'Nice Camera Nikon ;) thumbs uo';
         var idFound = false;
         var amount = 1;
         var newHTMLContent = createListItem(textForContent, "https://i2.cdscdn.com/pdt2/6/2/3/1/700x700/nik4020684229623/rw/nikon-speedlight-sb-500-flash-amovible-a-griffe-24.jpg", "15.40", productId, amount);
@@ -151,12 +151,12 @@ $(document).ready(function () {
         const minusButtonClass = "minusButton" + productId;
         const listItemId = "listItem" + productId;
         return `
-    <li id= ${listItemId}>
+    <li id= ${listItemId}> 
     <img src= ${imageSource}> </img>
-    <p> ${text} </p>
-    <button class= ${minusButtonClass} > - </button>
+    <p class= "descriptionStyle"> ${text} </p>
+    <button class= "plusMinusStyle ${minusButtonClass}" > - </button>
     <p id = ${amountId}> ${amount} </p>
-    <button class= ${plusButtonClass} > + </button>
+    <button  class= "plusMinusStyle ${plusButtonClass}"> + </button>
     <p> ${price} chf </p>
     </li>
     `
