@@ -94,7 +94,7 @@ $(document).ready(function () {
         checkoutItems.forEach(checkoutItem => {
             sum = sum + parseFloat(checkoutItem.price)
         })
-        $(priceSum).text(sum);
+        $(priceSum).text("Total Price: "+ Math.round(sum * 100) / 100+ " chf");
     }
 
     function addToCheckout(productId) {
@@ -155,10 +155,12 @@ $(document).ready(function () {
 <div class="shoppingLayout">
     <div>
         <img class="imgSizeList" src= ${imageSource}> </img>
-        <p class= "descriptionStyle"> ${text} </p>
     </div>
 
     <div class="textSignsAmountWrap">
+    <div>
+        <p class= "descriptionStyle"> ${text} </p>
+    </div>
         <div class="signsPriceAlign">
             <div class="minusPlusAmount">
                 <button class= "plusMinusStyle ${minusButtonClass}" > - </button>
@@ -166,10 +168,12 @@ $(document).ready(function () {
                 <button  class= "plusMinusStyle ${plusButtonClass}"> + </button>
             </div>
 
-            <div class="minusPlusAmount" >
-                <p class="priceAlign"> ${price} chf </p>
-            </div>
+
         </div>
+    </div>
+    <div class="minusPlusAmount" >
+    <p class= "descriptionStyle"> ${price} chf </p>
+    <div></div>
     </div>
 </div>    
     </li>

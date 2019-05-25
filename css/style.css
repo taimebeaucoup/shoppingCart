@@ -106,8 +106,8 @@ h1 {
 }
 
 .textSignsAmountWrap{
+  flex-direction: column;
   display: flex;
-  justify-content: center;
 }
 
 .imageText{
@@ -115,7 +115,10 @@ h1 {
 }
 
 .shoppingLayout{
+  margin-top: 10px;
+  height: 120px;
   display: flex;
+  justify-content: space-between;
 
 }
 
@@ -170,7 +173,7 @@ h1 {
 }
 
 .cart{
-  width: 100%;
+  width: 400px;
   background-color: rgb(215, 215, 255);
   /*display: none;*/
 }
@@ -230,7 +233,6 @@ height: auto;
 }
     
     .shopping-cart-items {
-      padding-top: 20px;
       display: flex;
       flex-direction: column;
       
@@ -247,3 +249,8 @@ height: auto;
         display: table;
         clear: both;
       }
+
+.priceSum{
+  margin-right: 20px;
+  text-align: right;
+}
