@@ -2,6 +2,7 @@ $(document).ready(function () {
     let checkoutItems = []; // local store of products - without looking through html
     const priceProduct1 = "10.40"
     const priceProduct2 = "15.40"
+    const priceProduct3 = "25.40"
 
     /*/ click function for first product */
     $('#addProduct1ToCart').click(function (event) {
@@ -16,6 +17,12 @@ $(document).ready(function () {
         var productId = "2"
         var newHTMLContent = createListItem(textForContent, "https://www.nikon.de/tmp/EU/2419865273/3760176746/2327365364/27184057/1391280926/2780083465/688362553/957329130/3489939240.png", priceProduct2, productId, 1);
         addToCartClick(productId, priceProduct2, newHTMLContent)
+    });
+    $('#addProduct3ToCart').click(function (event) {
+        var textForContent = 'Nikon Flash';
+        var productId = "3"
+        var newHTMLContent = createListItem(textForContent, "https://www.nikon.de/tmp/EU/2419865273/3760176746/2327365364/27184057/1391280926/2780083465/688362553/957329130/3489939240.png", priceProduct3, productId, 1);
+        addToCartClick(productId, priceProduct3, newHTMLContent)
     });
 
     function addToCartClick(productId, price, htmlContent) {

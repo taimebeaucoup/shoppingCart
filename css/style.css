@@ -174,12 +174,15 @@ h3{
     
 
 .containerFlex{
-        position: relative;
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
     }
 
 .productBox{
   display: flex;
-  justify-content: center;
+flex-wrap: wrap;
+width: 850px;
 }
 
 .cartWrapper{
@@ -221,6 +224,7 @@ height: auto;
         align-content: center;
         background-color: #4D8078;
         margin-left: 2rem;
+        margin-top: 15px;
     }
 
   
