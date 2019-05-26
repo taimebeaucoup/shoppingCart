@@ -7,7 +7,7 @@ $(document).ready(function () {
     $('#addProduct1ToCart').click(function (event) {
         var productId = "1";
         var container = $('.js-add-content');
-        var textForContent = 'Nikon cam :) ';
+        var textForContent = 'Nikon camera';
         var idFound = false;
         var amount = 1;
         var newHTMLContent = createListItem(textForContent, "https://www.nikon.de/imported/images/web/EU/products/digital-cameras/dslr/hero_ppdd_updated/nikon_dslr_d810_black_front--original.png", priceProduct1, productId, amount);
@@ -37,10 +37,10 @@ $(document).ready(function () {
     $('#addProduct2ToCart').click(function (event) {
                 var productId = "2";
         var container = $('.js-add-content');
-        var textForContent = 'Nice Camera';
+        var textForContent = 'Nikon Flash';
         var idFound = false;
         var amount = 1;
-        var newHTMLContent = createListItem(textForContent, "https://i2.cdscdn.com/pdt2/6/2/3/1/700x700/nik4020684229623/rw/nikon-speedlight-sb-500-flash-amovible-a-griffe-24.jpg", priceProduct2, productId, amount);
+        var newHTMLContent = createListItem(textForContent, "https://www.nikon.de/tmp/EU/2419865273/3760176746/2327365364/27184057/1391280926/2780083465/688362553/957329130/3489939240.png", priceProduct2, productId, amount);
 
 
         checkoutItems.forEach(checkoutItem => {
@@ -181,6 +181,7 @@ $(document).ready(function () {
     <div></div>
     </div>
 </div>    
+<hr>
     </li>
     `
     }
