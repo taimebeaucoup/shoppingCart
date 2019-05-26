@@ -1,16 +1,18 @@
 $(document).ready(function () {
-    let checkoutItems = [];
+    let checkoutItems = []; // local store of products - without looking through html
+    const priceProduct1 = "10.40"
+    const priceProduct2 = "15.40"
 
+    /*/ click function for first product */
     $('#addProduct1ToCart').click(function (event) {
         var productId = "1";
-        console.log('add to cart');
         var container = $('.js-add-content');
         var textForContent = 'Nikon cam :) ';
         var idFound = false;
         var amount = 1;
-        var newHTMLContent = createListItem(textForContent, "https://www.nikon.de/imported/images/web/EU/products/digital-cameras/dslr/hero_ppdd_updated/nikon_dslr_d810_black_front--original.png", "10.40", productId, amount);
+        var newHTMLContent = createListItem(textForContent, "https://www.nikon.de/imported/images/web/EU/products/digital-cameras/dslr/hero_ppdd_updated/nikon_dslr_d810_black_front--original.png", priceProduct1, productId, amount);
 
-
+        /* check if item is already in checkout*/
         checkoutItems.forEach(checkoutItem => {
             if (checkoutItem.id === productId) {
                 idFound = true;
@@ -18,28 +20,25 @@ $(document).ready(function () {
             }
         });
         if (idFound) {
-            checkoutItems = checkoutItems.concat([{ id: productId, price: "10.40" }]);
+            checkoutItems = checkoutItems.concat([{ id: productId, price: priceProduct1}]);
             const amountId = "#" + productId + "amount"
             $(amountId).text(amount);
         }
 
         else {
             container.append(newHTMLContent);
-            checkoutItems = checkoutItems.concat([{ id: productId, price: "10.40" }]);
+            checkoutItems = checkoutItems.concat([{ id: productId, price: priceProduct1 }]);
         }
         calculatePriceSum()
-        console.log(checkoutItems);
     });
 
     $('#addProduct2ToCart').click(function (event) {
-        console.log('add to cart'); // lol XD xdD
                 var productId = "2";
-        console.log('add to cart');
         var container = $('.js-add-content');
         var textForContent = 'Nice Camera';
         var idFound = false;
         var amount = 1;
-        var newHTMLContent = createListItem(textForContent, "https://i2.cdscdn.com/pdt2/6/2/3/1/700x700/nik4020684229623/rw/nikon-speedlight-sb-500-flash-amovible-a-griffe-24.jpg", "15.40", productId, amount);
+        var newHTMLContent = createListItem(textForContent, "https://i2.cdscdn.com/pdt2/6/2/3/1/700x700/nik4020684229623/rw/nikon-speedlight-sb-500-flash-amovible-a-griffe-24.jpg", priceProduct2, productId, amount);
 
 
         checkoutItems.forEach(checkoutItem => {
@@ -49,31 +48,29 @@ $(document).ready(function () {
             }
         });
         if (idFound) {
-            checkoutItems = checkoutItems.concat([{ id: productId, price: "15.40" }]);
+            checkoutItems = checkoutItems.concat([{ id: productId, price: priceProduct2 }]);
             const amountId = "#" + productId + "amount"
             $(amountId).text(amount);
         }
 
         else {
             container.append(newHTMLContent);
-            checkoutItems = checkoutItems.concat([{ id: productId, price: "15.40" }]);
+            checkoutItems = checkoutItems.concat([{ id: productId, price: priceProduct2 }]);
         }
         calculatePriceSum()
-        console.log(checkoutItems);
 
     });
 
-    // try and find currently clicked product id (list element or button element), without hard code - nicer code!
     $(document).on('click', '#listItem1 .plusButton1', function (event) {
-        addToCheckout("1")
+        addToCheckout("1", priceProduct1)
 
     });
     $(document).on('click', '#listItem2 .plusButton2', function (event) {
-        addToCheckout("2")
+        addToCheckout("2", priceProduct2)
 
     });
     $(document).on('click', '#listItem3 .plusButton3', function (event) {
-        addToCheckout("3")
+        addToCheckout("3", priceProduct2)
 
     });
     $(document).on('click', '#listItem1 .minusButton1', function (event) {
@@ -95,20 +92,20 @@ $(document).ready(function () {
             sum = sum + parseFloat(checkoutItem.price)
         })
         $(priceSum).text("Total Price: "+ Math.round(sum * 100) / 100+ " chf");
+        /* animation of total cost*/
         $(priceSum).addClass('addToCart');
         setTimeout(function(){
         $(priceSum).removeClass('addToCart');
-            
         },1000);
     }
 
-    function addToCheckout(productId) {
+    function addToCheckout(productId, price) {
         const amountId = "#" + productId + "amount";
         var amount = $(amountId).text();
         intAmount = parseInt(amount);
         intAmount = intAmount + 1;
         $(amountId).text(intAmount);
-        checkoutItems = checkoutItems.concat([{ id: productId, price: "10.40" }]);
+        checkoutItems = checkoutItems.concat([{ id: productId, price: price }]);
         calculatePriceSum()
     }
 
