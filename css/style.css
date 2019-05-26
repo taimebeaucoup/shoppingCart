@@ -92,6 +92,7 @@ h1 {
   color: #fff;
   border: 3px solid #c266d3;
   border-radius: 5px;
+  margin: 10px;
   background-image: -webkit-linear-gradient(30deg, #c266d3 50%, transparent 50%);
   background-image: linear-gradient(30deg, #c266d3 50%, transparent 50%);
   background-size: 500px;
@@ -155,8 +156,6 @@ h1 {
     
 
 .containerFlex{
-        display: flex;
-        align-items: flex-start;
         position: relative;
     }
 
@@ -198,7 +197,7 @@ height: auto;
   }
 
  .alignBox{
-        flex: 0 1 30%;
+        height: fit-content;
         justify-content: center;
         align-items: center;
         align-content: center;
