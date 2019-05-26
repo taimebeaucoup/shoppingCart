@@ -5,42 +5,23 @@ $(document).ready(function () {
 
     /*/ click function for first product */
     $('#addProduct1ToCart').click(function (event) {
-        var productId = "1";
-        var container = $('.js-add-content');
         var textForContent = 'Nikon camera';
-        var idFound = false;
-        var amount = 1;
-        var newHTMLContent = createListItem(textForContent, "https://www.nikon.de/imported/images/web/EU/products/digital-cameras/dslr/hero_ppdd_updated/nikon_dslr_d810_black_front--original.png", priceProduct1, productId, amount);
-
-        /* check if item is already in checkout*/
-        checkoutItems.forEach(checkoutItem => {
-            if (checkoutItem.id === productId) {
-                idFound = true;
-                amount = amount + 1;
-            }
-        });
-        if (idFound) {
-            checkoutItems = checkoutItems.concat([{ id: productId, price: priceProduct1}]);
-            const amountId = "#" + productId + "amount"
-            $(amountId).text(amount);
-        }
-
-        else {
-            container.append(newHTMLContent);
-            checkoutItems = checkoutItems.concat([{ id: productId, price: priceProduct1 }]);
-        }
-        calculatePriceSum()
-        $(".cart").fadeIn("fast");
-
+        var productId = "1"
+        var newHTMLContent = createListItem(textForContent, "https://www.nikon.de/imported/images/web/EU/products/digital-cameras/dslr/hero_ppdd_updated/nikon_dslr_d810_black_front--original.png", priceProduct1, productId, 1);
+        addToCartClick(productId, priceProduct1, newHTMLContent)
     });
 
     $('#addProduct2ToCart').click(function (event) {
-                var productId = "2";
-        var container = $('.js-add-content');
         var textForContent = 'Nikon Flash';
+        var productId = "2"
+        var newHTMLContent = createListItem(textForContent, "https://www.nikon.de/tmp/EU/2419865273/3760176746/2327365364/27184057/1391280926/2780083465/688362553/957329130/3489939240.png", priceProduct2, productId, 1);
+        addToCartClick(productId, priceProduct2, newHTMLContent)
+    });
+
+    function addToCartClick(productId, price, htmlContent) {
+        var container = $('.js-add-content');
         var idFound = false;
         var amount = 1;
-        var newHTMLContent = createListItem(textForContent, "https://www.nikon.de/tmp/EU/2419865273/3760176746/2327365364/27184057/1391280926/2780083465/688362553/957329130/3489939240.png", priceProduct2, productId, amount);
 
 
         checkoutItems.forEach(checkoutItem => {
@@ -50,19 +31,18 @@ $(document).ready(function () {
             }
         });
         if (idFound) {
-            checkoutItems = checkoutItems.concat([{ id: productId, price: priceProduct2 }]);
+            checkoutItems = checkoutItems.concat([{ id: productId, price: price }]);
             const amountId = "#" + productId + "amount"
             $(amountId).text(amount);
         }
 
         else {
-            container.append(newHTMLContent);
-            checkoutItems = checkoutItems.concat([{ id: productId, price: priceProduct2 }]);
+            container.append(htmlContent);
+            checkoutItems = checkoutItems.concat([{ id: productId, price: price }]);
         }
         calculatePriceSum()
         $(".cart").fadeIn("fast");
-
-    });
+    }
 
     $(document).on('click', '#listItem1 .plusButton1', function (event) {
         addToCheckout("1", priceProduct1)
@@ -94,12 +74,12 @@ $(document).ready(function () {
         checkoutItems.forEach(checkoutItem => {
             sum = sum + parseFloat(checkoutItem.price)
         })
-        $(priceSum).text("Total Price: "+ Math.round(sum * 100) / 100+ " chf");
+        $(priceSum).text("Total Price: " + Math.round(sum * 100) / 100 + " chf");
         /* animation of total cost*/
         $(priceSum).addClass('addToCart');
-        setTimeout(function(){
-        $(priceSum).removeClass('addToCart');
-        },1000);
+        setTimeout(function () {
+            $(priceSum).removeClass('addToCart');
+        }, 1000);
     }
 
     function addToCheckout(productId, price) {
@@ -156,32 +136,32 @@ $(document).ready(function () {
         const minusButtonClass = "minusButton" + productId;
         const listItemId = "listItem" + productId;
         return `
-    <li id= ${listItemId}> 
-<div class="shoppingLayout">
-    <div>
-        <img class="imgSizeList" src= ${imageSource}> </img>
-    </div>
-
-    <div class="textSignsAmountWrap">
-    <div>
-        <p class= "descriptionStyle"> ${text} </p>
-    </div>
-        <div class="signsPriceAlign">
-            <div class="minusPlusAmount">
-                <button class= "plusMinusStyle ${minusButtonClass}" > - </button>
-                <p class="amountStyle" id = ${amountId}> ${amount} </p>
-                <button  class= "plusMinusStyle ${plusButtonClass}"> + </button>
+        <li id=${listItemId}>
+        <div class="shoppingLayout">
+            <div>
+                <img class="imgSizeList" src=${imageSource}> </img>
             </div>
-
-
+    
+            <div class="textSignsAmountWrap">
+                <div>
+                    <p class="descriptionStyle"> ${text} </p>
+                </div>
+                <div class="signsPriceAlign">
+                    <div class="minusPlusAmount">
+                        <button class="plusMinusStyle ${minusButtonClass}"> - </button>
+                        <p class="amountStyle" id=${amountId}> ${amount} </p>
+                        <button class="plusMinusStyle ${plusButtonClass}"> + </button>
+                    </div>
+    
+    
+                </div>
+            </div>
+            <div class="minusPlusAmount">
+                <p class="descriptionStyle"> ${price} chf </p>
+                <div></div>
+            </div>
         </div>
-    </div>
-    <div class="minusPlusAmount" >
-    <p class= "descriptionStyle"> ${price} chf </p>
-    <div></div>
-    </div>
-</div>    
-<hr>
+        <hr>
     </li>
     `
     }
