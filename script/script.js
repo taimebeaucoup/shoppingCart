@@ -30,6 +30,8 @@ $(document).ready(function () {
             checkoutItems = checkoutItems.concat([{ id: productId, price: priceProduct1 }]);
         }
         calculatePriceSum()
+        $(".cart").fadeIn("fast");
+
     });
 
     $('#addProduct2ToCart').click(function (event) {
@@ -58,6 +60,7 @@ $(document).ready(function () {
             checkoutItems = checkoutItems.concat([{ id: productId, price: priceProduct2 }]);
         }
         calculatePriceSum()
+        $(".cart").fadeIn("fast");
 
     });
 
@@ -181,17 +184,6 @@ $(document).ready(function () {
     </li>
     `
     }
-    $('#plusButton').click(function (event) {
-        console.log(event);
-        console.log(event.target);
-
-    });
-
-    $('#clickCart').click(function (event) {
-        console.log(event);
-        console.log(event.target);
-
-    });
 
     (function () {
 

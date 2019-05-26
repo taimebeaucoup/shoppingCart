@@ -4,6 +4,7 @@
 html, body {
   font-family: 'Chivo', sans-serif;
   font-weight: 300;
+  background: #E4FEFA;
 
 }
 ul {
@@ -11,7 +12,6 @@ ul {
   margin: 0;
   padding: 0;
   background-color:burlywood;
- 
   position: sticky;
   top: 0;
 }
@@ -30,29 +30,37 @@ li a {
 }
 
 li a:hover {
-  background-color: #111;
+  background-color: #B8CCC9;
   cursor: pointer;
 }
 li a:hover:not(.active) {
-  background-color: #111;
+  background-color:#B8CCC9;
 }
 .active {
   background-color: gray;
 }
 
 .navWrap{
+  right: 0px;
+  left: 0px;
   display: flex;
+  position: fixed;
   align-items: flex-start;
-  position: relative;
+  
 }
-.navAlign{
+.navAlignHome{
   flex-flow: row;
 }
 
+.navAlignCart{
+  flex-flow: row;
+  position: fixed;
+  right: 0px;
+}
 h1 {
     color: white; 
-    background: rgb(255, 166, 166);
-    font-size: 3em; 
+    background: #73807E;
+    font-size: 2.7em; 
     display: flex;  
     align-content: center;
     justify-content: center;
@@ -174,7 +182,7 @@ h1 {
 .cart{
   width: 400px;
   background-color: rgb(215, 215, 255);
-  /*display: none;*/
+  display: none;
 }
 
 .shoppingCart{
