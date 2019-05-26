@@ -43,6 +43,7 @@ li a:hover:not(.active) {
 .navWrap{
   right: 0px;
   left: 0px;
+  z-index: 9999;
   display: flex;
   position: fixed;
   align-items: flex-start;
@@ -180,6 +181,7 @@ h3{
     }
 
 .productBox{
+  align-content: start;
   display: flex;
 flex-wrap: wrap;
 width: 850px;
