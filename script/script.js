@@ -1,9 +1,11 @@
 $(document).ready(function () {
     let checkoutItems = []; // local store of products - without looking through html
-    const priceProduct1 = "10.40"
-    const priceProduct2 = "15.40"
-    const priceProduct3 = "25.40"
-    const priceProduct4 = "35.40"
+    const priceProduct1 = "550.40"
+    const priceProduct2 = "75.90"
+    const priceProduct3 = "855.50"
+    const priceProduct4 = "59.60"
+    const priceProduct5 = "1445.40"
+    const priceProduct6 = "778.50"
 
     /*/ click function for first product */
     $('#addProduct1ToCart').click(function (event) {
@@ -20,16 +22,28 @@ $(document).ready(function () {
         addToCartClick(productId, priceProduct2, newHTMLContent)
     });
     $('#addProduct3ToCart').click(function (event) {
-        var textForContent = 'Nikon Flash';
+        var textForContent = 'Nikon Lense';
         var productId = "3"
-        var newHTMLContent = createListItem(textForContent, "https://www.nikon.de/tmp/EU/2419865273/3760176746/2327365364/27184057/1391280926/2780083465/688362553/957329130/3489939240.png", priceProduct3, productId, 1);
+        var newHTMLContent = createListItem(textForContent, "https://www.nikon.de/imported/images/web/EU/products/lenses/nikkor/af-s-nikkor-28mm-f1.4e-ed/AFS_28_1.4E--original.png", priceProduct3, productId, 1);
         addToCartClick(productId, priceProduct3, newHTMLContent)
     });
     $('#addProduct4ToCart').click(function (event) {
-        var textForContent = 'Nikon Flash';
+        var textForContent = 'Sony Flash';
         var productId = "4"
-        var newHTMLContent = createListItem(textForContent, "https://www.nikon.de/tmp/EU/2419865273/3760176746/2327365364/27184057/1391280926/2780083465/688362553/957329130/3489939240.png", priceProduct4, productId, 1);
+        var newHTMLContent = createListItem(textForContent, "./flash.png", priceProduct4, productId, 1);
         addToCartClick(productId, priceProduct4, newHTMLContent)
+    });
+    $('#addProduct5ToCart').click(function (event) {
+        var textForContent = 'Sony something';
+        var productId = "5"
+        var newHTMLContent = createListItem(textForContent, "./sony.png", priceProduct5, productId, 1);
+        addToCartClick(productId, priceProduct5, newHTMLContent)
+    });
+    $('#addProduct6ToCart').click(function (event) {
+        var textForContent = 'Sony Lens';
+        var productId = "6"
+        var newHTMLContent = createListItem(textForContent, "./14mm1.png", priceProduct6, productId, 1);
+        addToCartClick(productId, priceProduct6, newHTMLContent)
     });
 
     function addToCartClick(productId, price, htmlContent) {
@@ -74,6 +88,14 @@ $(document).ready(function () {
         addToCheckout("4", priceProduct2)
 
     });
+    $(document).on('click', '#listItem5 .plusButton5', function (event) {
+        addToCheckout("5", priceProduct2)
+
+    });
+    $(document).on('click', '#listItem6 .plusButton6', function (event) {
+        addToCheckout("6", priceProduct2)
+
+    });
     $(document).on('click', '#listItem1 .minusButton1', function (event) {
         var productId = "1"
         removeFromCheckout(productId)
@@ -88,6 +110,14 @@ $(document).ready(function () {
     });
     $(document).on('click', '#listItem4 .minusButton4', function (event) {
         var productId = "4"
+        removeFromCheckout(productId)
+    });
+    $(document).on('click', '#listItem5 .minusButton5', function (event) {
+        var productId = "5"
+        removeFromCheckout(productId)
+    });
+    $(document).on('click', '#listItem6 .minusButton6', function (event) {
+        var productId = "6"
         removeFromCheckout(productId)
     });
 
