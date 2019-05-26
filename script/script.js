@@ -32,8 +32,8 @@ $(document).ready(function () {
     });
 
     $('#addProduct2ToCart').click(function (event) {
-        console.log('add to cart');
-        var productId = "2";
+        console.log('add to cart'); // lol XD xdD
+                var productId = "2";
         console.log('add to cart');
         var container = $('.js-add-content');
         var textForContent = 'Nice Camera';
@@ -95,6 +95,11 @@ $(document).ready(function () {
             sum = sum + parseFloat(checkoutItem.price)
         })
         $(priceSum).text("Total Price: "+ Math.round(sum * 100) / 100+ " chf");
+        $(priceSum).addClass('addToCart');
+        setTimeout(function(){
+        $(priceSum).removeClass('addToCart');
+            
+        },1000);
     }
 
     function addToCheckout(productId) {
