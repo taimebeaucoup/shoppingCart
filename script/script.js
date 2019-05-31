@@ -22,7 +22,7 @@ $(document).ready(function () {
         addToCartClick(productId, priceProduct2, newHTMLContent)
     });
     $('#addProduct3ToCart').click(function (event) {
-        var textForContent = 'Nikon Lense';
+        var textForContent = 'Nikon Lens';
         var productId = "3"
         var newHTMLContent = createListItem(textForContent, "https://www.nikon.de/imported/images/web/EU/products/lenses/nikkor/af-s-nikkor-28mm-f1.4e-ed/AFS_28_1.4E--original.png", priceProduct3, productId, 1);
         addToCartClick(productId, priceProduct3, newHTMLContent)

@@ -20,11 +20,15 @@
     <div class="navWrap">
 
         <div class="navAlignHome">
-            <li class="liStyle"><a href="#home">leihs home</a></li>
+            <ul>
+                <li class="liStyle"><a href="#home">leihs home</a></li>
+            </ul>
         </div>
 
         <div class="navAlignCart">
-            <li class="liStyle" style="float:right"><a id="clickCart" href="#shoppingCart">shopping cart</a></li>
+            <ul>
+                <li class="liStyle" style="float:right"><a id="clickCart" href="#shoppingCart">shopping cart</a></li>
+            </ul>
         </div>
     </div>
     <h1>Fotografie</h1>
@@ -32,7 +36,7 @@
         <div class="productBox">
             <div class="alignBox">
                 <div class="imageContainer">
-                    <img class="productImage imgSize" id="fadeButton"
+                    <img class="productImage imgSize"
                         src="https://www.nikon.de/imported/images/web/EU/products/digital-cameras/dslr/hero_ppdd_updated/nikon_dslr_d810_black_front--original.png"
                         alt="canon camera">
                     <div class="productImageMiddle">
@@ -49,7 +53,7 @@
 
             <div class="alignBox">
                 <div class="imageContainer">
-                    <img class="productImage imgSize" id="fadeButton"
+                    <img class="productImage imgSize"
                         src="https://www.nikon.de/tmp/EU/2419865273/3760176746/2327365364/27184057/1391280926/2780083465/688362553/957329130/3489939240.png"
                         alt="flash">
                     <div class="productImageMiddle">
@@ -63,104 +67,98 @@
                 </div>
 
                 <button class="buttonStyle" type="button" id="addProduct2ToCart"> Add to cart</button>
-                
+
             </div>
             <div class="alignBox">
-                    <div class="imageContainer">
-                        <img class="productImage imgSize" id="fadeButton"
-                            src="https://www.nikon.de/imported/images/web/EU/products/lenses/nikkor/af-s-nikkor-28mm-f1.4e-ed/AFS_28_1.4E--original.png"
-                            alt="flash">
-                        <div class="productImageMiddle">
-                            <div class="productHoverText textStyle">28mm 1:1,4 E ED </div>
-                        </div>
-    
+                <div class="imageContainer">
+                    <img class="productImage imgSize"
+                        src="https://www.nikon.de/imported/images/web/EU/products/lenses/nikkor/af-s-nikkor-28mm-f1.4e-ed/AFS_28_1.4E--original.png"
+                        alt="flash">
+                    <div class="productImageMiddle">
+                        <div class="productHoverText textStyle">28mm 1:1,4 E ED </div>
                     </div>
-                    <div>
-                        <h2>Nikon Lens 28mm</h2>
-                        <p class="priceStyle">855.50 chf</p>
-                    </div>
-    
-                    <button class="buttonStyle" type="button" id="addProduct3ToCart"> Add to cart</button>
-                    
+
                 </div>
-                <div class="alignBox">
-                        <div class="imageContainer">
-                            <img class="productImage imgSize" id="fadeButton"
-                                src="./flash5.png"
-                                alt="sony compact">
-                            <div class="productImageMiddle">
-                                <div class="productHoverText textStyle">Nikon compatible mountable flash</div>
-                            </div>
-        
-                        </div>
-                        <div>
-                            <h2>Sony Flash</h2>
-                            <p class="priceStyle">59.60 chf</p>
-                        </div>
-        
-                        <button class="buttonStyle" type="button" id="addProduct4ToCart"> Add to cart</button>
-                        
-                    </div>
-                    <div class="alignBox">
-                            <div class="imageContainer">
-                                <img class="productImage imgSize" id="fadeButton"
-                                    src="./sony.png"
-                                    alt="flash">
-                                <div class="productImageMiddle">
-                                    <div class="productHoverText textStyle">Sony alpha compact camera with kit lens</div>
-                                </div>
-            
-                            </div>
-                            <div>
-                                <h2>Sony Camera</h2>
-                                <p class="priceStyle">1445.40 chf</p>
-                            </div>
-            
-                            <button class="buttonStyle" type="button" id="addProduct5ToCart"> Add to cart</button>
-                            
-                        </div>
-                        <div class="alignBox">
-                                <div class="imageContainer">
-                                    <img class="productImage imgSize" id="fadeButton"
-                                        src="./14mm1.png"
-                                        alt="flash">
-                                    <div class="productImageMiddle">
-                                        <div class="productHoverText textStyle">sony compatible full frame wide angle lens</div>
-                                    </div>
-                
-                                </div>
-                                <div>
-                                    <h2>Sony 14mm Lens</h2>
-                                    <p class="priceStyle">778.50 chf</p>
-                                </div>
-                
-                                <button class="buttonStyle" type="button" id="addProduct6ToCart"> Add to cart</button>
-                                
-                            </div>
-                    
-        </div>
-
-            <div class="cartWrapper">
-
-
-                <div class="cart">
-                    <h3>shopping cart</h3>
-                    <div class="shoppingCart">
-                        <hr>
-                        <ul class="js-add-content shopping-cart-items" id='cartProductList'>
-                    </div>
-                    <div id="wrapper">
-                        <div id="container">
-
-                            <p id="priceSum" class="priceSum phover">Total Price: 0</p>
-
-                        </div>
-                    </div>
-                    </ul>
+                <div>
+                    <h2>Nikon Lens 28mm</h2>
+                    <p class="priceStyle">855.50 chf</p>
                 </div>
 
+                <button class="buttonStyle" type="button" id="addProduct3ToCart"> Add to cart</button>
 
             </div>
+            <div class="alignBox">
+                <div class="imageContainer">
+                    <img class="productImage imgSize" src="./flash5.png" alt="sony compact">
+                    <div class="productImageMiddle">
+                        <div class="productHoverText textStyle">Nikon compatible mountable flash</div>
+                    </div>
+
+                </div>
+                <div>
+                    <h2>Sony Flash</h2>
+                    <p class="priceStyle">59.60 chf</p>
+                </div>
+
+                <button class="buttonStyle" type="button" id="addProduct4ToCart"> Add to cart</button>
+
+            </div>
+            <div class="alignBox">
+                <div class="imageContainer">
+                    <img class="productImage imgSize" src="./sony.png" alt="flash">
+                    <div class="productImageMiddle">
+                        <div class="productHoverText textStyle">Sony alpha compact camera with kit lens</div>
+                    </div>
+
+                </div>
+                <div>
+                    <h2>Sony Camera</h2>
+                    <p class="priceStyle">1445.40 chf</p>
+                </div>
+
+                <button class="buttonStyle" type="button" id="addProduct5ToCart"> Add to cart</button>
+
+            </div>
+            <div class="alignBox">
+                <div class="imageContainer">
+                    <img class="productImage imgSize" src="./14mm1.png" alt="flash">
+                    <div class="productImageMiddle">
+                        <div class="productHoverText textStyle">sony compatible full frame wide angle lens</div>
+                    </div>
+
+                </div>
+                <div>
+                    <h2>Sony 14mm Lens</h2>
+                    <p class="priceStyle">778.50 chf</p>
+                </div>
+
+                <button class="buttonStyle" type="button" id="addProduct6ToCart"> Add to cart</button>
+
+            </div>
+
+        </div>
+
+        <div class="cartWrapper">
+
+
+            <div class="cart">
+                <h3>shopping cart</h3>
+                <div class="shoppingCart">
+                    <hr>
+                    <ul class="js-add-content shopping-cart-items" id='cartProductList'></ul>
+                </div>
+                <div id="wrapper">
+                    <div id="container">
+
+                        <p id="priceSum" class="priceSum phover">Total Price: 0</p>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
     </div>
 
 
